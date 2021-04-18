@@ -11,7 +11,7 @@ Clone this repository on your local machine from https://github.com/tdrv90/offic
 ### 3. Add .env file in root folder with the following structure:
 ```
     REACT_APP_URL="place here root url to API endpoint"
-    
+
     REACT_APP_AUTH_TOKEN="Bearer ..."
 ```
 
@@ -25,7 +25,7 @@ Clone this repository on your local machine from https://github.com/tdrv90/offic
 - Material UI
 - Material UI DataGrid
 
-## Assignment functionalities and progress:
+## Assignment tasks and progress:
 - [x] Fetch and Display
 - [ ] Add Member
 - [x] Delete Members
