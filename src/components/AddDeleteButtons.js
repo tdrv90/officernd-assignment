@@ -15,7 +15,6 @@ const AddDeleteButtons = ({ selectionModel, handleDelete }) => {
                 classes={{ label: 'delete-btn' }}>
                 delete
             </Button>
-            {/* <Button classes={{ label: 'add-btn' }}>add member</Button> */}
             <AddMember />
         </div>
     )

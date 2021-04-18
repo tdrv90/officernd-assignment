@@ -7,8 +7,10 @@ import formatDate from '../Helpers/formatDate'
 import '../index.css'
 
 export default function DataTable({ members, filterItems, allCategories, itemsPerCategory, filteredMembers, teams, offices, url, authHeader }) {
+    // selectionModel - used to get IDs of the selected rows
     const [selectionModel, setSelectionModel] = useState([])
 
+    // table header structure
     const columns = [
         { field: 'member', headerName: 'Member', width: 250 },
         { field: 'team', headerName: 'Team', width: 200 },
@@ -17,6 +19,7 @@ export default function DataTable({ members, filterItems, allCategories, itemsPe
         { field: 'office', headerName: 'Location', width: 200 },
     ]
 
+    //delete selected row or rows in multiple selection
     const handleDelete = (selectionModel) => {
         selectionModel.map(async (id) => {
             await fetch(`${url}/members/${id}`, {
@@ -26,6 +29,7 @@ export default function DataTable({ members, filterItems, allCategories, itemsPe
         })
     }
 
+    // filter to display only the selected selected category of members
     const mappedMembers = filteredMembers.map((member) => {
         return {
             id: member._id,

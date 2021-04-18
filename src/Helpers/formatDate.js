@@ -1,3 +1,5 @@
+// format date to DD MMM YYYY format
+
 const formatDate = (entry) => {
     const dateToFormat = new Date(entry)
 

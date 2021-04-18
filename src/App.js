@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import DataTable from './components/Table'
 import './index.css';
 
+// URL and Bearer token stored in .env file, please check README for more prior running repo 
 const url = process.env.REACT_APP_URL
 const authHeader = {
   headers: {
@@ -15,6 +16,7 @@ function App() {
   const [teams, setTeams] = useState({})
   const [offices, setOffices] = useState({})
 
+  // fetch members, teams and locations
   const getMembers = async () => {
     const res = await fetch(`${url}/members`, authHeader)
     const fetchedMembers = await res.json()
@@ -50,6 +52,7 @@ function App() {
     getOffices()
   }, [])
 
+  // list the categories from the available members, i.e. 'All, Drop-In, Active, Contact, Former'
   const allCategories = ['all', ...new Set(members.map((item) => item.calculatedStatus))]
   const itemsPerCategory = (members) => {
     let hashItems = {}
@@ -65,6 +68,7 @@ function App() {
     return { 'all': members.length, ...hashItems }
   }
 
+  // filter only the needed members
   const filterItems = (category) => {
     if (category === 'all') {
       setFilteredMembers(members)
