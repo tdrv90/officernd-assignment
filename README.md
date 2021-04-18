@@ -8,7 +8,7 @@ Clone this repository on your local machine from https://github.com/tdrv90/offic
     npm install
 ```
 
-### 3. Add .env file in root folder with the following structure:
+### 3. Add **.env** file in root folder with the following structure:
 ```
     REACT_APP_URL="place here root url to API endpoint"
 
