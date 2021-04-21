@@ -3,7 +3,7 @@ import '../index.css'
 import { Button } from '@material-ui/core'
 import AddMember from './AddMember'
 
-const AddDeleteButtons = ({ selectionModel, handleDelete }) => {
+const AddDeleteButtons = ({ selectionModel, handleDelete, teams, offices, url, authHeader }) => {
     return (
         <div className="add-delete-buttons">
             <Button
@@ -15,7 +15,7 @@ const AddDeleteButtons = ({ selectionModel, handleDelete }) => {
                 classes={{ label: 'delete-btn' }}>
                 delete
             </Button>
-            <AddMember />
+            <AddMember teams={teams} offices={offices} url={url} authHeader={authHeader} />
         </div>
     )
 }

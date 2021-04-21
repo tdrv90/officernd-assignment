@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import DataTable from './components/Table'
 import './index.css';
 
-// URL and Bearer token stored in .env file, please check README for more prior running repo 
+// URL and Bearer token stored in .env file, please check README for more info prior running repo 
 const url = process.env.REACT_APP_URL
 const authHeader = {
   headers: {

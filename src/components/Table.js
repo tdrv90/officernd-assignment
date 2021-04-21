@@ -44,6 +44,7 @@ export default function DataTable({ members, filterItems, allCategories, itemsPe
     return (
         <div className="table-container">
             <div className='table-header-container'>
+
                 <CategoryList
                     filterItems={filterItems}
                     filteredMembers={filteredMembers}
@@ -51,11 +52,22 @@ export default function DataTable({ members, filterItems, allCategories, itemsPe
                     itemsPerCategory={itemsPerCategory}
                     className='statuses'
                 />
-                <AddDeleteButtons selectionModel={selectionModel} handleDelete={handleDelete} className="table-controls" />
+
+                <AddDeleteButtons
+                    selectionModel={selectionModel}
+                    handleDelete={handleDelete}
+                    className="table-controls"
+                    teams={teams}
+                    offices={offices}
+                    url={url}
+                    authHeader={authHeader}
+                />
             </div>
+
             <div className="table-counter">
                 {filteredMembers.length} {filteredMembers.length === 1 ? "result" : "results"} (of total {members.length})
             </div>
+
             <div style={{ height: 500, width: '100%' }}>
                 <DataGrid
                     rows={mappedMembers}
